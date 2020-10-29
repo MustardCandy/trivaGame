@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="triviaGame.css">
+    <script src="triviaGame.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> TRIVIA BOOLEAN GAME </h1>
+    <div class = "direction">
+      <p>Directions:
+        The game will ask you a selection of triva questions based on student submissions.
+        Press TRUE or FALSE for each statement(s). If you are correct, you will gain one point.
+        But if you are wrong, you will be deducted a point.
+        You may press the RESET button to restart the game. </p>
+    </div>
+    <div>
+      <button type="button" id = "myBtn" onclick="buttonHit"> TRUE </button>
+      <button type="button" id = "myBtn" onclick="buttonHit"> FALSE </button>
+      <button type="button" id = "myBtn" onclick="buttonHit"> RESET </button>
+      <script>
+        function buttonHit (){
+          var press = document.getElementById("TRUE");
+        }
+      </script>
+    </div>
+  </body>
+</html>

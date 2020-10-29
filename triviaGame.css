@@ -1,0 +1,35 @@
+h1 {
+  font-size: 64px;
+  text-align: center;
+  border-radius: 20px;
+  border-style: ridge;
+  box-shadow: 10px 10px 5px black;
+  margin: 60px;
+  padding: 10px;
+}
+
+div {
+  width: 600px;
+  margin: 5em auto;
+  padding: 70px;
+  background-color: #fdfdff;
+  border-radius: 0.5em;
+  box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+}
+
+body {
+  background-color: #f0f0f2;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+} 
+
+.direction {
+  width: 1000px;
+  margin: 5em auto;
+  padding: 20px;
+  background-color: #fdfdff;
+  border-radius: 0.5em;
+  box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+  text-align: center;
+}
