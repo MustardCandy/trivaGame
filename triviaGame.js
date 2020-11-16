@@ -1,10 +1,11 @@
+console.log("loading");
+document.getElementById('replace').innerHTML = "JS Loading";
+makeGame();
   function change() { //allows you to click on text and change it to this "It's November!"
     document.getElementById("center").innerHTML = "It's November!";
   }
 
-  function buttonHit (){ //let's you click the button
-    var press = document.getElementById("TRUE");
-  }
+
 
 
 function randomNumber(min, max) { //a helper function to generate a new, random number
@@ -184,3 +185,19 @@ then keep adding them into one big return randomly using either makeAnd or makeN
     }
     return retList; //final statement which gives a giant a small statement of ors ands or nots
   }
+  function makeGame(){
+  var playGame = true;
+  var score = 0;
+  var trueBtn = document.getElementById("trueBtn").addEventListener("click");
+  var list = [{statement: "Bowen wears glasses", value: true}, {statement: "Aidan is only tall because he's using stilts", value: false}, {statement: "I am sus", value: true}, {statement: "Euan and Memphis are secretly twins", value: false}, {statement: "We are doing computer science stuff", value: true}, {statement: "Global warming is a conspiracy", value: false}, {statement: "Birds work for the bourgeoisie", value: true}, {statement: "The Earth is flat", value: false}, {statement: "2020 is a great year", value: false}, {statement: "Aidans uses a wig", value: false}];
+  while (playGame) {
+    var makeQ = makeComplex(list);
+    console.log(makeQ.value);
+    var pro = ("Your score is " + score + ";  The question is: " + makeQ.statement);
+    document.getElementById("replace").innerHTML = pro;
+  if(makeQ.value == true && trueBtn = True){
+    console.log("WOrks!");
+  }
+    return pro;
+ }
+}
