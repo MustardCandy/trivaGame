@@ -1,16 +1,3 @@
-/*
- Memphis:
-Aidan doesn’t take physics but acts like he does: T
-Global warming is a lie: F
-Bethesda made the biggest flop in gaming history:T
-PC isn’t master race: F
-Aidan calls any sport with a ball in it sports ball:T
-Aidan thinks PC isn’t master race:F
-Aidan is Extreme big brain:F
-Komoto best code editor:T
-Windows 10 is good:F
- Euan hates on Komoto because why not:T
- */
 var keys = document.querySelector('.ultdiv');
 var checkedBox = 0.0;
 
