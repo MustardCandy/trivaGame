@@ -1,12 +1,25 @@
-console.log("loading");
-document.getElementById('replace').innerHTML = "JS Loading";
-makeGame();
-  function change() { //allows you to click on text and change it to this "It's November!"
-    document.getElementById("center").innerHTML = "It's November!";
-  }
+/*
+ Memphis:
+Aidan doesn’t take physics but acts like he does: T
+Global warming is a lie: F
+Bethesda made the biggest flop in gaming history:T
+PC isn’t master race: F
+Aidan calls any sport with a ball in it sports ball:T
+Aidan thinks PC isn’t master race:F
+Aidan is Extreme big brain:F
+Komoto best code editor:T
+Windows 10 is good:F
+ Euan hates on Komoto because why not:T
+ */
+var keys = document.querySelector('.ultdiv');
+var checkedBox = 0.0;
 
+var display = document.querySelector('.display');
+var scoreD = document.querySelector('.score');
+console.log(display.textContent)
+var dochandeler = document.getElementById("textbox");
 
-
+var bowenTrivia = [{statement: "Bowen wears glasses", value: true}, {statement: "Aidan is only tall because he's using stilts", value: false}, {statement: "I am sus", value: true}, {statement: "Euan and Memphis are secretly twins", value: false}, {statement: "We are doing computer science stuff", value: true}, {statement: "Global warming is a conspiracy", value: false}, {statement: "Birds work for the bourgeoisie", value: true}, {statement: "The Earth is flat", value: false}, {statement: "2020 is a great year", value: false}, {statement: "Aidans uses a wig", value: false}];
 
 function randomNumber(min, max) { //a helper function to generate a new, random number
       return Math.floor(Math.random() * (max - min) + min); //round the Math.random down and give it a range from the initial (which is the first number in the array) to the last number (length-1)
@@ -55,34 +68,10 @@ function randomNumber(min, max) { //a helper function to generate a new, random 
    return retObj;
  }
 
-/*
-Make a function called
-makeComplex(list, maxlen=5)
-list = a list of objects with the keys of statement:<text> and value:<bool>
-This function should assume that the following functions also exist in the code and should be called in this function:
-makeAnd(first, second)
-makeOr(first, second)
-makeNot(object)
-randomList(length)
-Using these the function should
-Make a complex response of format {statement:<text>, value:<bool>}
-This statement should NOT alter the original statements.
-makeNot should be randomly applied apart from makeAnd and makeOr on single statements only with a 25% chance.
-You will be teaching groups how to randomList and makeComplex
-we use randomList so we can pick which statements to use.
-So it takes the [{statement: "I have baby legs", value: true}, {statement: "Aidan can drive", value: false}......] array of everyone's statements and
-a max length
-then you should figure out between 2  and the max number of statements you will do
-that should be random
-so take that number of things off randomList's output
-then run each thing though the negation
-then keep adding them into one big return randomly using either makeAnd or makeNot
-*/
-
   function makeComplex (list, maxlen=5) {
     var randomizer = randomList(list.length); //scrambles up the list in random order
     var chance = randomNumber(0,5); //gives it a 25% chance so that the length of each statement can vary from 2-5 statements
-    var notTrue = false; //tracker boolean
+    var notTrue = false; //tracker valueean
     if (0 == chance) { //each if statement is a chance so that the length can vary (see idea for maxlen=5)
       var ran = randomizer.slice(0,2); //I only keep the first two random arrays
       var part1 = list.splice(ran[0],1); //I use that first two random array (say [9],[3]) to index and take statements from list
@@ -185,19 +174,51 @@ then keep adding them into one big return randomly using either makeAnd or makeN
     }
     return retList; //final statement which gives a giant a small statement of ors ands or nots
   }
-  function makeGame(){
-  var playGame = true;
-  var score = 0;
-  var trueBtn = document.getElementById("trueBtn").addEventListener("click");
-  var list = [{statement: "Bowen wears glasses", value: true}, {statement: "Aidan is only tall because he's using stilts", value: false}, {statement: "I am sus", value: true}, {statement: "Euan and Memphis are secretly twins", value: false}, {statement: "We are doing computer science stuff", value: true}, {statement: "Global warming is a conspiracy", value: false}, {statement: "Birds work for the bourgeoisie", value: true}, {statement: "The Earth is flat", value: false}, {statement: "2020 is a great year", value: false}, {statement: "Aidans uses a wig", value: false}];
-  while (playGame) {
-    var makeQ = makeComplex(list);
-    console.log(makeQ.value);
-    var pro = ("Your score is " + score + ";  The question is: " + makeQ.statement);
-    document.getElementById("replace").innerHTML = pro;
-  if(makeQ.value == true && trueBtn = True){
-    console.log("WOrks!");
-  }
-    return pro;
- }
-}
+
+
+var stateArr = makeComplex(bowenTrivia);
+var index = 0;
+var score= 0;
+scoreD.textContent = "Score : " + score;
+display.textContent = stateArr.statement;
+keys.addEventListener('click', e => {
+  if (e.target.matches('button')) {
+    var key = e.target;
+    var action = key.dataset.action;
+    var keyContent = key.textContent;
+    var displayed = display.textContent;
+    //simply resets the page
+    if (action === "reset") {
+      location.reload()
+    }
+    console.log(stateArr.value);
+    if (action === "true") {
+      if (stateArr.value === true) {
+        score += 1;
+      }else{
+        score -= 1;
+      }
+      index++;
+      stateArr = makeComplex(bowenTrivia);
+       display.textContent = stateArr.statement;
+        index = 0;
+        stateArr = makeComplex(bowenTrivia);
+    }
+
+    if (action === "false") {
+      if (stateArr.value === false) {
+        score+=1;
+      }
+      else{
+        score-=1;
+      }
+      index++;
+      stateArr = makeComplex(bowenTrivia);
+      display.textContent = stateArr.statement;
+      index = 0;
+      stateArr = makeComplex(bowenTrivia);
+      }
+
+      scoreD.textContent = "Score: " + score;
+    }
+  })
