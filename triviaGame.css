@@ -40,25 +40,24 @@ h1 {
   color: white;
   border-style: outset;
   border-color: grey;
-  border-width: thick;
   background-color: rgb(2,55,11);
   padding: 10px 23px;
   width: 40px;
   height: 15px;
   font-size: 10px;
-  transform: translate(160px,14px);
+  transform: translate(20px, 70px);
 }
 
 .true{
-  transform: translate(330px, -40px)
+  transform: translate(20px, -30px)
 }
 
 .false{
-  transform: translate(-70px, -40px)
+  transform: translate(40px, -30px)
 }
 
 .reset{
-  transform: translate(167px, -35px)
+  transform: translate(131px, -22px)
 }
 
 .display{
@@ -83,10 +82,9 @@ h1 {
   position:absolute;
   top: 55%;
   left: 45%;
-  transform: translate(-49%, 150px);
-  width: 420px;
+  transform: translate(465px, -117px);
+  width: 255px;
   height: 130px;
-
  }
 
 .ultdiv button{
@@ -94,8 +92,6 @@ h1 {
   margin-bottom: 1%;
   white-space: nowrap;
   color: white;
-  border-style: outset;
-  border-width: thick;
   background-color: rgb(4,145,28);
   padding: 10px 23px;
 }
