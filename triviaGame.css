@@ -1,3 +1,10 @@
+body {
+  background-image: url(game.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 h1 {
   font-size: 64px;
   text-align: center;
@@ -10,21 +17,6 @@ h1 {
   color: rgb(5, 117, 1);
   width: 800px;
   transform: translateX(25%);
-}
-
-div {
-  width: 600px;
-  margin: 5em auto;
-  padding: 70px;
-  background-color: #fdfdff;
-  border-radius: 0.5em;
-  box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
-}
-
-body {
-  background-image: url(game.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .side {
@@ -41,52 +33,78 @@ body {
   height: 200px;
 }
 
-.middle {
-    display: inline-block;
-    position: relative;
-    margin: 20px;
-    float: left;
-    width: 700px;
-    height: 200px;
-    padding-top: 10px;
-    padding-left: 20px;
-    background-color: #fdfdff;
+.score{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  white-space: nowrap;
+  color: white;
+  border-style: outset;
+  border-color: grey;
+  border-width: thick;
+  background-color: rgb(2,55,11);
+  padding: 10px 23px;
+  width: 40px;
+  height: 15px;
+  font-size: 10px;
+  transform: translate(160px,14px);
 }
 
-.align {
-  width: 800px;
+.true{
+  transform: translate(330px, -40px)
+}
+
+.false{
+  transform: translate(-70px, -40px)
+}
+
+.reset{
+  transform: translate(167px, -35px)
+}
+
+.display{
+  background-color: white;
+  border-style: double;
+  border-color: black;
   margin: 20px;
-  padding: 20px;
-  background-color: #fdfdff;
-  border-radius: 15px;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  float: center;
-  height: 125px;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-46%);
-}
-
-#myBtn {
-  padding: 16px 50px;
-  background-color: lightgrey;
-  font-size: 16px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-
-#center {
-  text-align: center;
-}
-
-#left {
-  text-align: left;
   float: left;
-  font-size: 68px;
-  font-family: fantasy;
-  transform: translateX(5%);
-  transform: translateY(-50%);
+  width: 700px;
+  height: 250px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+ .ultdiv{
+  background-color: white;
+  border-style: double;
+  border-color: black;
+  position:absolute;
+  top: 55%;
+  left: 45%;
+  transform: translate(-49%, 150px);
+  width: 420px;
+  height: 130px;
+
+ }
+
+.ultdiv button{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  white-space: nowrap;
+  color: white;
+  border-style: outset;
+  border-width: thick;
+  background-color: rgb(4,145,28);
+  padding: 10px 23px;
+}
+
+.ultdiv button:hover{
+  white-space: nowrap;
+  background-color: green;
+}
+
+.ultdiv button:active{
+  border-style: inset;
 }
